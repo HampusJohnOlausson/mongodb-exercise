@@ -1,0 +1,24 @@
+{
+  "name": "mongodb-exercise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon database.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HampusJohnOlausson/mongodb-exercise.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HampusJohnOlausson/mongodb-exercise/issues"
+  },
+  "homepage": "https://github.com/HampusJohnOlausson/mongodb-exercise#readme",
+  "dependencies": {
+    "mongodb": "^3.6.6",
+    "nodemon": "^2.0.7"
+  }
+}
