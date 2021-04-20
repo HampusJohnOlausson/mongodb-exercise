@@ -1,34 +1,31 @@
-GET http://localhost:6000/products/addProduct
-
-###
-
 GET http://localhost:6000/products
 
 ###
 
-
-GET http://localhost:6000/products/single
+GET http://localhost:6000/products/607ece4f341fdf1a52bb05e0
 
 ###
 
 POST http://localhost:6000/products
 Content-Type: application/json
 
-{
-    
+{   
+    "title": "Stickad tröja",
+    "price": 599
 }
 
 ###
 
-DElETE http://localhost:6000/products/2
+DElETE http://localhost:6000/products/607ee134af3095295858846c
 
 ###
 
-PUT http://localhost:6000/products/2
+PUT http://localhost:6000/products/607ede27c2801d27e87977b2
 Content-Type: application/json
 
 {
-    
+    "title": "grön tröja",
+    "price": 888
 }
 
 ###

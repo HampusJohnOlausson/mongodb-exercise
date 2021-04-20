@@ -3,15 +3,34 @@ const router = express.Router();
 import Product from '../models/product.js';
 
 
-router.get('/addProduct',(req, res) => {
-    const product = new Product({
-      title: 'Shirt',
-      price: 299
+router.get("/", (req, res) => {
+  Product.find().sort({ createdAt: -1 })
+    .then((result) => {
+      res.send(result);
+    })
+    .catch((err) => {
+      console.log(err);
     });
+});
 
+router.get("/:id", (req, res) => {
+  const id = req.params.id;
+  Product.findById(id)
+    .then((result) => {
+      res.send(result);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
+router.post('/',(req, res) => {
+    
+    const product = new Product(req.body);
     product.save()
       .then((result) => {
         res.send(result);
+        // res.redirect('/products');
       })
       .catch((err) => {
         console.log(err);
@@ -19,30 +38,28 @@ router.get('/addProduct',(req, res) => {
 })
 
 
-router.get('/', (req, res) => {
-  Product.find()
-    .then((result) => {
-      res.send(result);
-    }).catch((err) => {
-      console.log(err);
-  })
-})
-
-router.get('/single', (req, res) => {
-  Product.findById("607ebf8fdc6e320582423641")
-    .then((result) => {
-      res.send(result);
-    }).catch((err) => {
-      console.log(err);
-    })
-})
-
 router.delete('/:id', (req, res) => {
-  res.send(products);
+    const id = req.params.id;
+
+    Product.findByIdAndDelete(id)
+      .then((result) => {
+        res.send(result);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
 });
 
 router.put('/:id', (req, res) => {
-    res.send(products);
+
+    const id = req.params.id;
+    Product.findByIdAndUpdate({id})
+      .then((result) => {
+        res.send(result);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
 })
 
 export default router;
