@@ -1,0 +1,29 @@
+GET http://localhost:6000/products
+
+###
+
+GET http://localhost:6000/products/1
+
+###
+
+POST http://localhost:6000/products
+Content-Type: application/json
+
+{
+    
+}
+
+###
+
+DElETE http://localhost:6000/products/2
+
+###
+
+PUT http://localhost:6000/products/2
+Content-Type: application/json
+
+{
+    
+}
+
+###
