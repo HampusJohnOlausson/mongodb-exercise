@@ -1,8 +1,13 @@
+GET http://localhost:6000/products/addProduct
+
+###
+
 GET http://localhost:6000/products
 
 ###
 
-GET http://localhost:6000/products/1
+
+GET http://localhost:6000/products/single
 
 ###
 

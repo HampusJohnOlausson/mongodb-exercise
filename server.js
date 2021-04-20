@@ -9,14 +9,10 @@ const url =
 const options = { useNewUrlParser: true, useUnifiedTopology: true };
 
 mongoose.connect(url, options)
-.then((result) => {
-    console.log('connected to db');
-}).catch((err) => {
-    console.log(err);
-})
+.then((result) => app.listen(6000))
+.catch((err) => {console.log(err);})
 
 app.use(express.json());
 
 app.use('/products', productRouter);
 
-app.listen(6000);
