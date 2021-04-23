@@ -1,3 +1,5 @@
+//Products
+
 GET http://localhost:6000/products
 
 ###
@@ -26,6 +28,26 @@ Content-Type: application/json
 {
     "title": "grön tröja",
     "price": 888
+}
+
+###
+
+//Users
+
+GET http://localhost:6000/users/loggedIn
+
+###
+
+GET http://localhost:6000/users/loggedIn/role
+
+###
+
+POST http://localhost:600/users/register
+Content-Type: application/json
+
+{
+    "name": "Erik",
+    "password": 123456
 }
 
 ###

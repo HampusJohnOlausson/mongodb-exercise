@@ -4,6 +4,8 @@ import userRouter from './routes/user.router.js';
 import mongoose from 'mongoose';
 import cookiesession from 'cookie-session';
 
+const app = express();
+ 
 app.use(cookiesession({
     name: 'session',
     secret: 'h3110fri3nd',
@@ -11,8 +13,6 @@ app.use(cookiesession({
     maxAge: 10000 * 60,
     httpOnly: true,
 }))
-
-const app = express();
 
 const url = "mongodb+srv://hampusOlausson:Kurt3234Olsson@cluster0.so03q.mongodb.net/node?retryWrites=true&w=majority";
 const options = { useNewUrlParser: true, useUnifiedTopology: true };
