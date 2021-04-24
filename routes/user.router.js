@@ -62,7 +62,7 @@ userRouter.post('/login', async (req, res) => {
         return res.status(401).json('incorrect username or password');
     }
 
-    //Creates cookie
+    //Creates session
     if(req.session) {
         req.session.username = userName, 
         req.session.id = user._id,
@@ -71,4 +71,35 @@ userRouter.post('/login', async (req, res) => {
     }
 })
 
+userRouter.delete('/logOut', (req, res) => {
+
+    req.session = null;
+    res.status(201).json('Logout succesful');
+})
+
+userRouter.get("/allUsers", secureWithRole("admin"), async (req, res) => {
+  const result = await User.find();
+  res.status(200).json(result);
+});
+
+//middleware for secure endpoints
+function secure(req, res, next) {
+    if(req.session.userName){
+        next();
+    } else {
+        res.status(401).json('You need to login to access')
+    }
+}
+
+function secureWithRole(role){
+    return [secure, async (req, res, next) => {
+        if(req.session.role === role){
+            next();
+        } else {
+            res.status(403).json('You dont have the authority to view this information');
+        }
+    }]
+}
+
 export default userRouter;
+
