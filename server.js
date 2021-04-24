@@ -3,6 +3,7 @@ import productRouter from './routes/product.router.js';
 import userRouter from './routes/user.router.js';
 import mongoose from 'mongoose';
 import cookiesession from 'cookie-session';
+import "express-async-errors";
 
 const app = express();
  
