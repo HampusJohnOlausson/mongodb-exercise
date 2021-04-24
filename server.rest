@@ -42,11 +42,11 @@ GET http://localhost:6000/users/loggedIn/role
 
 ###
 
-POST http://localhost:600/users/register
+POST http://localhost:6000/users/register
 Content-Type: application/json
 
 {
-    "name": "Erik",
+    "userName": "Erik Svensson",
     "password": 123456
 }
 
