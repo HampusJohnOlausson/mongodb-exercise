@@ -26,8 +26,8 @@ PUT http://localhost:6000/products/607ede27c2801d27e87977b2
 Content-Type: application/json
 
 {
-    "title": "grön tröja",
-    "price": 888
+    "title": "blå tröja",
+    "price": 789
 }
 
 ###
@@ -47,7 +47,7 @@ Content-Type: application/json
 
 {
     "userName": "erik Svensson",
-    "password": "123456",
+    "password": "123456"
 }
 
 ###

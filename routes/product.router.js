@@ -1,6 +1,6 @@
 import express from 'express';
-const router = express.Router();
 import Product from '../models/product.js';
+const router = express.Router();
 
 
 router.get("/", (req, res) => {
@@ -33,7 +33,7 @@ router.post('/',(req, res) => {
         // res.redirect('/products');
       })
       .catch((err) => {
-        console.log(err);
+         return console.log(err);
       })
 })
 
@@ -53,9 +53,14 @@ router.delete('/:id', (req, res) => {
 router.put('/:id', (req, res) => {
 
     const id = req.params.id;
-    Product.findByIdAndUpdate({id})
+    const currentProduct = Product.findById(id);
+
+    Product.findByIdAndUpdate(id, {
+      title: req.body.title,
+      price: req.body.price,
+    })
       .then((result) => {
-        res.send(result);
+        res.status(202).json(null);
       })
       .catch((err) => {
         console.log(err);
