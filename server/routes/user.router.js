@@ -1,5 +1,5 @@
 import express from 'express';
-import User from "../models/user.js";
+import User from "../models/user.model.js";
 import bcrypt from 'bcrypt';
 import mongoose from 'mongoose'
 const userRouter = express.Router();

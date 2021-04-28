@@ -2,10 +2,10 @@
   "name": "mongodb-exercise",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon ./server/server.js"
   },
   "repository": {
     "type": "git",
