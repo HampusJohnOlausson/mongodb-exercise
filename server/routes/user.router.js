@@ -7,11 +7,10 @@ import "express-async-errors";
 
 
 userRouter.get('/loggedIn', (req, res) => {
-
    
     if(req.session){
-        res.status(200).send(req.session.username)
-        
+        const userSession = {userName: req.session.userName, password: req.session.password, _id: req.session.id}
+        res.status(200).send(userSession);
     } else {
         res.status(401).send('Nobody has logged in');
     }

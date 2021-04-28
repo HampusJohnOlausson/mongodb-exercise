@@ -1,9 +1,10 @@
 import express from 'express';
-import productRouter from './routes/product.router.js';
+import postRouter from './routes/post.router.js';
 import userRouter from './routes/user.router.js';
 import mongoose from 'mongoose';
 import cookiesession from 'cookie-session';
 import "express-async-errors";
+const port = process.env.PORT || 6000;
 
 const app = express();
  
@@ -19,12 +20,12 @@ const url = "mongodb+srv://hampusOlausson:Kurt3234Olsson@cluster0.so03q.mongodb.
 const options = { useNewUrlParser: true, useUnifiedTopology: true };
 
 mongoose.connect(url, options)
-.then((result) => app.listen(6000))
+.then((result) => app.listen(port))
 .catch((err) => {console.log(err);})
 
 app.use(express.json());
-app.use('/products', productRouter);
-app.use('/users', userRouter);
-app.use(express.static("/public"));
+app.use('api/posts', postRouter);
+app.use('api/users', userRouter);
+app.use(express.static("/client"));
 app.use(express.urlencoded({ extended: true }));
 

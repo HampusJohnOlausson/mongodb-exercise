@@ -1,48 +1,46 @@
-//Products
+//Posts
 
-GET http://localhost:6000/products
-
-###
-
-GET http://localhost:6000/products/607ece4f341fdf1a52bb05e0
+GET http://localhost:6000/api/posts/
 
 ###
 
-POST http://localhost:6000/products
+GET http://localhost:6000/api/posts/
+
+###
+
+POST http://localhost:6000/api/posts/
 Content-Type: application/json
 
 {   
-    "title": "Stickad tröja",
-    "price": 599
+    "post": "Har nån hört något om Github?"
 }
 
 ###
 
-DElETE http://localhost:6000/products/607ee134af3095295858846c
+DElETE http://localhost:6000/api/posts/607ee134af3095295858846c
 
 ###
 
-PUT http://localhost:6000/products/607ede27c2801d27e87977b2
+PUT http://localhost:6000/api/posts/607ede27c2801d27e87977b2
 Content-Type: application/json
 
 {
-    "title": "blå tröja",
-    "price": 789
+    "post": "Nu finns min bok att köpa"
 }
 
 ###
 
 //Users
 
-GET http://localhost:6000/users/loggedIn
+GET http://localhost:6000/api/users/loggedIn
 
 ###
 
-GET http://localhost:6000/users/loggedIn/role
+GET http://localhost:6000/api/users/loggedIn/role
 
 ###
 
-POST http://localhost:6000/users/register
+POST http://localhost:6000/api/users/register
 Content-Type: application/json
 
 {
@@ -52,7 +50,7 @@ Content-Type: application/json
 
 ###
 
-POST http://localhost:6000/users/login
+POST http://localhost:6000/api/users/login
 Content-Type: application/json
 
 {
@@ -62,10 +60,10 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:6000/users/logout
+DELETE http://localhost:6000/api/users/logout
 
 ###
 
-GET http://localhost:6000/users/allUsers
+GET http://localhost:6000/api/users/allUsers
 
 ###

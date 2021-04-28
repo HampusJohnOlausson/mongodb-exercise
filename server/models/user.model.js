@@ -4,7 +4,10 @@ const Schema = mongoose.Schema;
 const userSchema = mongoose.Schema({
   _id: mongoose.Schema.Types.ObjectId,
   userName: String,
-  password: String,
+  password: {
+    type: String,
+    select: false
+  },
   role: String,
 });
 
